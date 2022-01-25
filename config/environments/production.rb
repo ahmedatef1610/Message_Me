@@ -95,5 +95,5 @@ Rails.application.configure do
 
   config.action_cable.mount_path = "/cable"
   config.action_cable.url = "message-me-eg.herokuapp.com"
-  config.action_cable.allowed_request_origins = [ "https://message-me-eg.herokuapp.com/", /http:\/\/message-me-eg.herokuapp.com.*/ ]
+  config.action_cable.allowed_request_origins = [ "https://message-me-eg.herokuapp.com/"]
 end
