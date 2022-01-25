@@ -1,0 +1,289 @@
+ridk install
+ridk
+
+ruby
+irb
+
+ruby file.rb 
+rufo file.rb 
+
+
+ri 
+rdoc
+==========================================
+
+===========
+C:\Ruby25-x64\bin
+C:\Ruby30-x64\bin
+
+===========
+/c/Ruby25-x64/bin/ruby
+/c/Ruby25-x64/bin/gem
+
+===========
+gem install solargraph
+gem install rufo
+===========
+
+=====================================================================================================
+gem list
+===========
+gem list bundler
+gem update bundler
+gem cleanup bundler
+===========
+gem install sqlite3
+gem install webpacker
+gem install rails
+gem install rails -v 5.2.6
+gem install rails -v 6.1.4.4
+gem install rails -v 5.2.2.1
+===========
+rails -v
+gem list rails
+===========
+rails new name_of_app
+rails new test_app
+rails new first_app
+===========
+rails _5.2.6_ new name_of_app
+rails _5.2.6_ new test_app
+rails _5.2.6_ new second_app
+rails _5.2.6_ new message_me
+===========
+rails server
+rails s
+rails server -b 0.0.0.0 -p 80
+rails s -b 0.0.0.0
+
+===========
+gem uninstall rails -v 5.2.6
+gem cleanup rails -v 5.2.6
+===========
+
+bundle info [gemname]
+=====================================================================================================
+(alt + p) => RACK_MINI_PROFILER 
+?pp=disable
+?pp=enable
+==========================================
+rails generate controller pages
+rails g controller pages
+
+rails generate migration create_articles
+rails g migration create_articles
+rails g migration add_timestamps_to_articles
+
+===================
+bundle install --without production # DEPRECATED
+bundle config set --local without 'production' # not working
+bundle config without production
+===================
+# Scaffold generator command to create an article model (with two attributes), 
+articles controller, views for articles and migration file to create articles table:
+
+rails generate scaffold Article title:string description:text
+rails g scaffold Article title:string description:text
+rails g scaffold User username:string email:string password:string
+rails db:migrate
+rails db:rollback
+===================
+rails routes --expanded
+rails routes -c articles
+rails routes -c articles | grep edit
+===================
+bundle exec rake schedular:clear_log
+rake --tasks
+rake log:clear
+rake tmp:clear
+===================
+rails console
+rails c
+===========
+Article.all # class name in models file
+
+Article.create(title: "first article", description: "Description of first article") # make sure Article is capitalized if using this method
+
+article = Article.new
+article.title = "second article"
+article.description = "description of second article"
+article.save
+
+article = Article.new(title: "third article", description: "description of third article")
+article.save
+
+Article.all
+=====================================================================================================
+
+reload!  => use this when change in models files
+===================
+# Call 'byebug' anywhere in the code to stop execution and get a debugger console
+byebug
+continue # again work server
+# you can use on rails s
+$ params
+$ continue
+===================
+heroku login
+heroku git:remote -a alpha-blog-rails-eg
+git push heroku master
+heroku run rails db:migrate
+heroku open
+heroku run rails console
+=====================================================================================================
+https://www.mashrurhossain.com/blog/rails6bootstrap4
+
+yarn add bootstrap@5.1.3 jquery popper.js
+
+yarn add jquery
+yarn add bootstrap@5.1.3
+yarn add @popperjs/core@2.10.2
+
+yarn add popper.js
+yarn add jquery@3.1.1
+===================
+
+=====================================================================================================
+
+rails g scaffold User username:string email:string password:string
+rails db:migrate
+rails g migration add_user_id_to_articles
+rails db:migrate
+
+===================
+rails g migration create_users
+rails db:migrate
+rails g migration add_user_id_to_articles
+rails db:migrate
+===================
+rails generate migration add_password_digest_to_users
+rails db:migrate
+===================
+rails generate migration add_admin_to_users
+rails db:migrate
+===================
+
+
+=====================================================================================================
+
+rails test
+rails generate test_unit:scaffold category
+rails test test/controllers
+rails test test/system
+rails test test/controllers/categories_controller_test.rb
+rails generate integration_test create_category
+rails test
+rails test test/integration/create_category_test.rb
+rails generate integration_test list_categories
+rails test test/integration/list_categories.rb
+
+===================
+rails generate migration create_article_categories
+rails db:migrate
+===================
+
+=====================================================================================================
+bundle config without production
+bundle install
+
+cd 1-complete_ruby__mashrur_hossain/2-intro_ruby_on_rails/alpha_blog/
+rails s -b 0.0.0.0
+rails c
+
+rails routes --expanded | grep edit
+rails routes -E
+rails routes -c articles
+rails routes -c articles --expanded
+rails routes -c users
+
+dokku run production rails routes --expanded
+
+172.17.137.14
+
+
+=====================================================================================================
+=====================================================================================================
+=====================================================================================================
+=====================================================================================================
+=====================================================================================================
+	sudo apt install postgresql
+	sudo service postgresql start
+	sudo -u postgres psql
+	sudo -u postgres createuser <username>
+	sudo -u postgres createdb <dbname>
+	sudo -u postgres psql
+
+	pgrep -u postgres -fa -- -D 
+	=============================================
+	git clone
+	cd repo
+	# install rvm (rvm --version)
+	rvm install "ruby-2.5.3"
+	gem install bundler -v 1.17.3
+	bundle install
+	rake db:create
+	rake db:migrate
+
+	rails s # webserver
+	rails c # debug development
+
+	sudo apt-get install libpq-dev
+	=============================================
+	ls /etc/postgresql/12/main
+	cat /etc/postgresql/12/main/
+	service postgresql
+	service postgresql status
+
+	sudo -i -u postgres
+	sudo su postgres
+
+	sudo -u postgres createuser <username>
+	sudo -u postgres createuser --interactive
+	sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'pass';"
+	sudo passwd postgres
+	sudo -u postgres createdb db_name
+	sudo -u postgres createdb db_name
+
+	sudo -u postgres psql
+	sudo -u ahmed psql
+
+	\conninfo
+	\l
+	\du
+	=================================================
+	sudo service postgresql
+	sudo service postgresql status
+	sudo service postgresql start
+	sudo service postgresql stop
+	sudo systemctl status postgresql
+
+	psql -U ahmed -h 172.17.137.14 -d db_name
+	=================================================
+	wsl -- hostname -I
+	wsl --list --verbose
+	wsl --shutdown
+
+======================================================================================================================
+	Post-install message from rubyzip:
+	RubyZip 3.0 is coming!
+	**********************
+
+	The public API of some Rubyzip classes has been modernized to use named
+	parameters for optional arguments. Please check your usage of the
+	following classes:
+		* `Zip::File`
+		* `Zip::Entry`
+		* `Zip::InputStream`
+		* `Zip::OutputStream`
+
+	Please ensure that your Gemfiles and .gemspecs are suitably restrictive
+	to avoid an unexpected breakage when 3.0 is released (e.g. ~> 2.3.0).
+	See https://github.com/rubyzip/rubyzip for details. The Changelog also
+	lists other enhancements and bugfixes that have been implemented since
+	version 2.3.0.
+					run  bundle exec spring binstub --all
+	* bin/rake: Spring inserted
+	* bin/rails: Spring inserted
+
+======================================================================================================================
+

@@ -1,0 +1,111 @@
+===================
+rails console
+rails c
+========================================================================================
+Article.all # class name in models file
+=========
+Article.create(title: "first article", description: "Description of first article") # make sure Article is capitalized if using this method
+=========
+article = Article.new
+article.title = "second article"
+article.description = "description of second article"
+article.save
+=========
+article = Article.new(title: "third article", description: "description of third article")
+article.save
+=========
+Article.create(title: "fourth article", description: "Description of fourth article")
+Article.create(title: "fifth article", description: "Description of fifth article")
+=========
+Article.all
+========================================================================================
+Article.find(1) # replace 1 with id of article you want to find
+=========
+article = Article.find(1)
+article.title # to display (get) the title
+article.description # to display (get) the description
+=========
+article = Article.find(1)
+article.title = "new title"
+article.description = "new description"
+article.save
+=========
+article = Article.find(1)
+article = Article.last
+article.destroy
+=========
+Article.find(1).destroy
+Article.last.destroy
+=========
+article = Article.new()
+article.valid? # false
+article.new_record?
+article.save # false because of validates in article.rb in models file
+article.errors
+article.errors.full_messages
+article.errors.size
+=========
+article.update(title: "title")
+=========
+========================================================================================
+
+
+User.all
+User
+=========
+user_1 = User.first
+=========
+Article.create(title: "fourth article", description: "Description of fourth article", user_id: user_1.id)
+Article.create(title: "fourth article", description: "Description of fourth article", user: user_1)
+=========
+user_1.articles.build(title: "fourth article", description: "Description of fourth article") => return new article
+_ => this in console mean last command
+article = _
+article.save
+=========
+user_2 = User.last
+article = Article.first
+
+article.update(user_id: user_2.id)
+article.update(user: user_2)
+
+user_2.articles << article
+
+user_2.articles
+article.user => user
+article.user_id => 2
+=========
+
+========================================================================================
+User.create(username: "ahmed atef", email: "test@test.com")
+User.create(username: "atef saad", email: "TEST2@test.com")
+user = User.first
+user.destroy
+=========
+Article.update_all(user_id: User.first.id)
+=========
+BCrypt::Password.create("qwert12345")
+
+user = User.last
+user.password = "qwert12345"
+user.save
+
+
+user = User.last # (or User.find(enter id of user here))
+user.authenticate("qwert12345") # This, being the correct password will return the user object
+user.authenticate("enter incorrect password") # This, being an incorrect password, will return false
+=========
+User.first.class.name.downcase # "user"
+=========
+@user.new_record?
+user.admin?
+user.toggle!(:admin)
+=========
+Article.delete_all
+=========
+User.count
+=========
+x = Category.new
+x.new_record?
+=========
+========================================================================================
