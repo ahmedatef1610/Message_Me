@@ -4,6 +4,7 @@
         "Atef",
         "bcrypt",
         "byebug",
+        "chatbox",
         "conninfo",
         "createdb",
         "createuser",
