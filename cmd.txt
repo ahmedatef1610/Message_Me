@@ -170,6 +170,10 @@ Hirb.disable
 
 Hirb::Formatter.dynamic_config['ActiveRecord::Base']
 ===================
+rails g controller messages
+rails destroy controller messages
+rails g controller messages create
+===================
 
 =====================================================================================================
 
