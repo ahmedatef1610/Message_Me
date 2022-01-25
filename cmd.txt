@@ -162,7 +162,12 @@ rails db:migrate
 rails generate migration add_admin_to_users
 rails db:migrate
 ===================
-
+rails generate model User
+rails db:seed
+===================
+Hirb.enable
+Hirb.disable
+===================
 
 =====================================================================================================
 
