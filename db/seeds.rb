@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# User.create(username: "ahmed", password: "12345")
-# User.create(username: "ahmed", password: "password")
-# User.create(username: "atef", password: "password")
-# User.create(username: "saad", password: "password")
-# User.create(username: "omar", password: "password")
+User.create(username: "ahmed", password: "12345")
+User.create(username: "ahmed", password: "12345")
+User.create(username: "atef", password: "12345")
+User.create(username: "saad", password: "12345")
+User.create(username: "omar", password: "12345")
 
 # Message.create(body:"hi",user_id:1)
 # Message.create(body:"hi",user_id:2)
