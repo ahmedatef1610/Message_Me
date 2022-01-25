@@ -167,6 +167,8 @@ rails db:seed
 ===================
 Hirb.enable
 Hirb.disable
+
+Hirb::Formatter.dynamic_config['ActiveRecord::Base']
 ===================
 
 =====================================================================================================
