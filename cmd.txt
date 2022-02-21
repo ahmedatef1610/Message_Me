@@ -133,7 +133,7 @@ heroku run rails console
 heroku logs --tail
 ===================
 heroku config --app message-me-eg | grep REDISTOGO_URL
-=> REDISTOGO_URL:            redis://redistogo:7b2fb466752dca9e7d05d96f61719d5c@soapfish.redistogo.com:11943/
+=> REDISTOGO_URL:            redis://redistogo:************e7d05d96f61719d5c@soapfish.redistogo.com:11943/
 ===================
 =====================================================================================================
 https://www.mashrurhossain.com/blog/rails6bootstrap4
