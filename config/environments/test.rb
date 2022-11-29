@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.hosts << "message-me-eg.up.railway.app"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's

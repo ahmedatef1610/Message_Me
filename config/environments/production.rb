@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.hosts << "message-me-eg.up.railway.app"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -94,6 +95,6 @@ Rails.application.configure do
 
 
 
-  config.action_cable.url = "wss://message-me-eg.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = [ "https://message-me-eg.herokuapp.com/"]
+  config.action_cable.url = "wss://message-me-eg.up.railway.app/cable"
+  config.action_cable.allowed_request_origins = [ "https://message-me-eg.up.railway.app/"]
 end

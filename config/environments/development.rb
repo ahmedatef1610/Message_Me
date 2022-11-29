@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.hosts << "message-me-eg.up.railway.app"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -60,5 +61,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_cable.disable_request_forgery_protection = true
-  config.action_cable.allowed_request_origins = [ "https://message-me-eg.herokuapp.com/"]
+  config.action_cable.allowed_request_origins = [ "https://message-me-eg.up.railway.app/"]
 end
